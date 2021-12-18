@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+    <style>
+        .item {
+            height: 50px;
+            width: 100px;
+            margin-left: 30px;
+            display: inline-block;
+            border: 1px solid #903;
+        }
+    </style>
+</head>
+<body>
+    <h2>点击切换颜色</h2>
+    <div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        let items = document.getElementsByClassName('item')
+        // for(var i=0;i<items.length;i++) {
+        //     items[i].onclick = function() {
+        //         // this.style.background = "#903"
+        //         // console.log(i,this)
+        //         // items[i].style.background = '#903'
+        //     }
+        // }
+        for(let i=0;i<items.length;i++) {
+            items[i].onclick = function() {
+                // this.style.background = "#903"
+                // console.log(i,this)
+                items[i].style.background = '#903'
+            }
+        }
+        let a,b
+        let c=100,d=300,f="abc",g=[]
+        //1.变量不能重复声明
+        // let star = 'hh'
+        // let star = 'oo'
+
+        // 2.块级作用域 ES5作用域:全局,函数,eval
+        // if else while for 也是块级作用域
+        // {
+        //     let girl = '张三'
+        //     var boy = '李四'
+        // }
+        // console.log(girl)
+        // console.log(boy)
+
+        // 3.不存在变量提升
+        // console.log(song)
+        // let song = '孤勇者'
+        // console.log(song2)
+        // var son2g = '孤勇者'
+
+        // 4.不影响作用域链
+        // {
+        //     let school = '清华'
+        //     function fn() {
+        //         console.log(school)
+        //     }
+        //     fn()
+        // }
+    </script>
+</body>
+</html>
