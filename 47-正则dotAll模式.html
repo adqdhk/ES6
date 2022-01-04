@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则dotAll模式</title>
+</head>
+<body>
+    <script>
+        //. 表示匹配除换行符 \n 之外的任何单字符，*表示零次或多次。所以.*在一起就表示任意字符出现零次或多次。没有?表示贪婪模式。比如a.*b，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。这被称为贪婪匹配。
+        //?跟在*或者+后边用时，表示懒惰模式。也称非贪婪模式。就是匹配尽可能少的字符。就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。
+
+        //dot . 元字符 除换行符以外的任意单个字符
+        let str = `
+        <ul>
+            <li>
+                <a>肖生克的救赎</a>
+                <p>上映时间: 1994-09-10</p>
+            </li>
+            <li>
+                <a>阿甘正传</a>
+                <p>上映时间: 1994-07-06</p>
+            </li>
+        </ul>`
+        //声明正则
+        // const reg = /<li>\s+<a>(.*?)<\/a>\s+<p>(.*?)<\/p>/
+        const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs
+        //执行匹配
+        // const result = reg.exec(str)
+        // console.log(result);
+
+        let result
+        let data = []
+        while(result = reg.exec(str)) {
+            data.push({title: result[1], time: result[2]})
+        }
+        console.log(data)
+    </script>
+</body>
+</html>

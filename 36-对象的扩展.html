@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的扩展</title>
+</head>
+<body>
+    <script>
+        // 1.Object.is 判断两个值是否完全相等
+        console.log(Object.is(120,120));//===
+        console.log(Object.is(NaN,NaN));
+        console.log(NaN === NaN);
+        // 2.Object.assign 对象的合并
+        const config1 = {
+            host: 'localhost',
+            port: 3306,
+            name: 'root',
+            pass: 'root',
+            test: 'test'
+        }
+        const config2 = {
+            host: 'http://www.baidu.com',
+            port: 33060,
+            name: 'baidu.com',
+            pass: 'iloveyou',
+            test2: 'test2'
+        }
+        console.log(Object.assign(config1,config2));
+        // 3.Object.setPrototypeOf设置原型对象 Object.getPrototypeOf
+        const person = {
+            name: '张三'
+        }
+        const firends = {
+            age: [18,,19,20]
+        }
+        Object.setPrototypeOf(person,firends)
+        console.log(Object.getPrototypeOf(person));
+        console.log(person);
+    </script>
+</body>
+</html>
