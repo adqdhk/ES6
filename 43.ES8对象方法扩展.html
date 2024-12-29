@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ES8对象扩展</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //声明对象
-        const people = {
-            name: '张三',
-            friends: ['李四','王五','赵六'],
-            brother: ['张四','张五','张六']
-        }
+      //声明对象
+      const people = {
+        name: "张三",
+        friends: ["李四", "王五", "赵六"],
+        brother: ["张四", "张五", "张六"],
+      };
 
-        //获取对象所有的键
-        console.log(Object.keys(people))
-        //获取对象所有的值
-        console.log(Object.values(people))
-        //entries
-        console.log(Object.entries(people))
+      //获取对象所有的键
+      console.log(Object.keys(people));
+      //获取对象所有的值
+      console.log(Object.values(people));
+      //entries
+      console.log(Object.entries(people));
 
-        //创建Map
-        const m = new Map(Object.entries(people))
-        console.log(m.get('name'))
+      //创建Map
+      const m = new Map(Object.entries(people));
+      console.log(m.get("name"));
 
-        //对象属性的描述对象
-        console.log(Object.getOwnPropertyDescriptors(people))
+      //对象属性的描述对象
+      console.log(Object.getOwnPropertyDescriptors(people));
 
-        const obj = Object.create(null,{
-            name: {
-                //设置值
-                value: 'hello',
-                //属性特性
-                writable: true,
-                configurable: true,
-                enumerable: true
-            }
-        })
+      const obj = Object.create(null, {
+        name: {
+          //设置值
+          value: "hello",
+          //属性特性
+          writable: true,
+          configurable: true,
+          enumerable: true,
+        },
+      });
     </script>
-</body>
+  </body>
 </html>

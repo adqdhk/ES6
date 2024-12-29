@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let str = `
+      let str = `
         <ul>
             <li>
                 <a>肖生克的救赎</a>
@@ -18,22 +18,22 @@
                 <a>阿甘正传</a>
                 <p>上映时间: 1994-07-06</p>
             </li>
-        </ul>`
+        </ul>`;
 
-        //声明正则
-        const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg
+      //声明正则
+      const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs;
 
-        //调用方法
-        const result = str.matchAll(reg)
+      //调用方法
+      const result = str.matchAll(reg);
 
-        // for(let v of result) {
-        //     console.log(v)
-        // }
+      // for(let v of result) {
+      //     console.log(v)
+      // }
 
-        const arr = [...result]
-        console.log(arr)
+      const arr = [...result];
+      console.log(arr);
 
-        //iterator接口只能遍历一次
+      //iterator接口只能遍历一次
     </script>
-</body>
+  </body>
 </html>

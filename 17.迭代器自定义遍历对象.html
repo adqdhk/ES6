@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>迭代器自定义遍历对象</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //声明一个对象
-        const banji = {
-            name: '终极一班',
-            stus: [
-                'xiaoming',
-                'xiaoning',
-                'xiaotian',
-                'knight'
-            ],
-            [Symbol.iterator]() {
-                //索引变量
-                let index = 0
-                return {
-                    next:() => {
-                        if(index < this.stus.length) {
-                            const result = {value:this.stus[index],done:false}
-                            //下标自增
-                            index++
-                            //返回结果
-                            return result
-                        }else {
-                            return {value:undefined,done:true}
-                        }
-                    }
-                }
-            }
-        }
-        for (const item of banji) {
-            console.log(item)
-        }
+      //声明一个对象
+      const banji = {
+        name: "终极一班",
+        stus: ["xiaoming", "xiaoning", "xiaotian", "knight"],
+        [Symbol.iterator]() {
+          //索引变量
+          let index = 0;
+          return {
+            next: () => {
+              if (index < this.stus.length) {
+                const result = { value: this.stus[index], done: false };
+                //下标自增
+                index++;
+                //返回结果
+                return result;
+              } else {
+                return { value: undefined, done: true };
+              }
+            },
+          };
+        },
+      };
+      for (const item of banji) {
+        console.log(item);
+      }
     </script>
-</body>
+  </body>
 </html>

@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>allSettled</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //声明两个Promise对象
-        const p1 = new Promise((resolve,reject) => {
-            setTimeout(() => {
-                resolve('商品数据 - 1')
-            },1000)
-        })
-        const p2 = new Promise((resolve,reject) => {
-            setTimeout(() => {
-                // resolve('商品数据 - 2')
-                reject('出错啦！')
-            },1000)
-        })
-        //调用allSettled方法
-        //无论数组中的Promise对象返回结果如何，都返回一个成功的Promise对象
-        const result = Promise.allSettled([p1,p2])
-        console.log(result)
-        
-        //数组中的Promise对象都成功时，才返回成功的Promise对象
-        const res = Promise.all([p1,p2])
-        console.log(res)
+      //声明两个Promise对象
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("商品数据 - 1");
+        }, 1000);
+      });
+      const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // resolve('商品数据 - 2')
+          reject("出错啦！");
+        }, 1000);
+      });
+      //调用allSettled方法
+      //无论数组中的Promise对象返回结果如何，都返回一个成功的Promise对象
+      const result = Promise.allSettled([p1, p2]);
+      console.log(result);
+
+      //数组中的Promise对象都成功时，才返回成功的Promise对象
+      const res = Promise.all([p1, p2]);
+      console.log(res);
     </script>
-</body>
+  </body>
 </html>

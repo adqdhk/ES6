@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Symbol的内置值</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //ES6 提供了 11 个内置的 Symbol 值，指向语言内部使用的方法。(作为对象的属性)
-        //对象的Symbol.hasInstance属性，指向一个内部方法。当其他对象使用instanceof运算符，判断是否为该对象的实例时，会调用这个方法。
-        class Person {
-            static [Symbol.hasInstance](params) {
-                console.log(params)
-                console.log('我被用来检测类型了')
-                return false
-            }
+      //ES6 提供了 11 个内置的 Symbol 值，指向语言内部使用的方法。(作为对象的属性)
+      //对象的Symbol.hasInstance属性，指向一个内部方法。当其他对象使用instanceof运算符，判断是否为该对象的实例时，会调用这个方法。
+      class Person {
+        static [Symbol.hasInstance](params) {
+          console.log(params);
+          console.log("我被用来检测类型了");
+          return false;
         }
-        let o = {}
-        console.log(o instanceof Person)
-        
-        //对象的Symbol.isConcatSpreadable属性等于一个布尔值，表示该对象用于Array.prototype.concat()时，是否可以展开。
-        const arr = [1,2,3]
-        const arr2 = [4,5,6]
-        arr2[Symbol.isConcatSpreadable] = false
-        console.log(arr.concat(arr2))
+      }
+      let o = {};
+      console.log(o instanceof Person);
+
+      //对象的Symbol.isConcatSpreadable属性等于一个布尔值，表示该对象用于Array.prototype.concat()时，是否可以展开。
+      const arr = [1, 2, 3];
+      const arr2 = [4, 5, 6];
+      arr2[Symbol.isConcatSpreadable] = false;
+      console.log(arr.concat(arr2));
     </script>
-</body>
+  </body>
 </html>
